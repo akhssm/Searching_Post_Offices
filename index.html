@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Post Office Application</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Intro Section -->
+  <section id="intro-section" class="intro">
+    <div class="intro-left">
+      <h2>Post Office Application</h2>
+      <p>This application allows you to extract information about the nearest Post Offices, based on your location.</p>
+      <img src="https://illustrations.popsy.co/white/mail-delivery.svg" alt="Postman illustration" />
+    </div>
+    <div class="intro-right">
+      <h3>Your Current IP Address is <span id="intro-ip">127.0.0.1</span></h3>
+      <button id="getStartedBtn">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <section id="main-app" class="hidden">
+    <div class="main-container">
+      <h2 class="center-title">IP Address: <span id="main-ip">—</span></h2>
+
+      <div class="ip-info">
+        <div class="info-grid">
+          <div><strong>Lat:</strong> <span id="lat">—</span></div>
+          <div><strong>City:</strong> <span id="city">—</span></div>
+          <div><strong>Organisation:</strong> <span id="org">—</span></div>
+
+          <div><strong>Long:</strong> <span id="lon">—</span></div>
+          <div><strong>Region:</strong> <span id="region">—</span></div>
+          <div><strong>Hostname:</strong> <span id="hostname">—</span></div>
+        </div>
+
+        <!-- Map section -->
+        <div class="map-grid">
+          <h2 class="center-title">Your Location on Map</h2>
+          <iframe id="gmap" src="" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+        </div>
+
+        <h2 class="center-title">More Information About You</h2>
+        <div class="more-info">
+          <p><strong>Time Zone:</strong> <span id="tz">—</span></p>
+          <p><strong>Date and Time:</strong> <span id="localTime">—</span></p>
+          <p><strong>Pincode:</strong> <span id="postal">—</span></p>
+          <p><strong>Message:</strong> Number of pincodes found — <span id="postCount">—</span></p>
+        </div>
+
+        <!-- Post Office section -->
+        <h2 class="center-title">Post Offices Near You</h2>
+        <div class="postoffices-box">
+          <div class="search-box">
+            <input type="text" id="searchBar" placeholder="Search Post Office..." />
+          </div>
+
+          <div class="post-grid" id="postsContainer">
+            <p class="muted">Loading post offices...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

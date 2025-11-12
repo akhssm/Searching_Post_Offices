@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #101020;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Intro Screen */
+.intro {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.intro-left {
+  flex: 1;
+  background: #0d0d18;
+  color: #ddd;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.intro-left h2 {
+  color: #575A85;
+}
+
+.intro-left img {
+  width: 70%;
+  max-width: 300px;
+  margin-top: 30px;
+  align-self: center;
+}
+
+.intro-right {
+  flex: 1;
+  background: #575A85;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-right button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-right button:hover {
+  background: white;
+  color: #575A85;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Main Container */
+.main-container {
+  width: 90%;
+  max-width: 900px;
+  background: #181830;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+.ip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.info-grid div {
+  font-size: 14px;
+}
+
+/* Map section */
+.map-grid {
+  margin-top: 20px;
+  background-color: #575A85;
+  border-radius: 12px;
+  padding: 15px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.map-grid iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.center-title {
+  text-align: center;
+  margin: 20px 0 10px;
+  color: #575A85;
+}
+
+.more-info {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.8;
+}
+
+/* Search box */
+.search-box {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #bbb;
+}
+
+/* Post Office Grid */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.post-item {
+  background: #575A85;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.post-item h5 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.post-item .muted {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.muted {
+  color: #aaa;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+  .search-box input {
+    width: 90%;
+  }
+}
